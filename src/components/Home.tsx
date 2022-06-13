@@ -1,0 +1,27 @@
+import React from 'react';
+
+type PropsType = {
+  name: string;
+};
+type StateType = {};
+
+export default class Home extends React.Component<PropsType, StateType> {
+  constructor(props: PropsType) {
+    super(props);
+
+    this.onBtnClick = this.onBtnClick.bind(this);
+  }
+
+  render() {
+    return (
+      <>
+        <h1>Hello, {this.props.name}</h1>
+        <button onClick={this.onBtnClick}>Click</button>
+      </>
+    );
+  }
+
+  onBtnClick(): void {
+    alert('Click');
+  }
+}
